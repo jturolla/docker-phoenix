@@ -2,4 +2,6 @@ FROM azukiapp/elixir
 MAINTAINER jturolla <julio.turolla@gmail.com>
 
 RUN apt-get update && \
-    apt-get install -y npm
+    apt-get install -y \
+    npm \
+    inotify-tools
