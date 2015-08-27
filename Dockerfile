@@ -1,9 +1,7 @@
-FROM azukiapp/elixir
-MAINTAINER jturolla <julio.turolla@gmail.com>
+FROM gullitmiranda/elixir
 
-RUN apt-get update && \
-    apt-get install -y \
-    nodejs-legacy \
-    npm \
-    inotify-tools \
-    postgresql \
+# Install local Elixir hex and rebar
+RUN  apk add --update postgresql-client \
+  && rm -rf /var/cache/apk/* /var/tmp/* \
+
+CMD ["psql"]
